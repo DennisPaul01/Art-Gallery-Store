@@ -1,0 +1,12 @@
+.cta {
+  font-family: "Antic Didone", serif;
+  font-size: 2.4rem;
+  border: 2px solid var(--cta-color);
+  border-radius: 7px;
+  padding: 2rem 8rem;
+  transition: 0.3s;
+}
+.cta:hover {
+  background-color: var(--cta-color);
+  color: var(--inside-box-color-dark);
+}
