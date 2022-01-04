@@ -1,0 +1,45 @@
+.footer {
+  border-top: 2px solid var(--cta-color);
+  width: 88%;
+  margin: auto;
+  display: flex;
+
+  .description {
+    margin: 5rem 0;
+    text-align: left;
+    flex: 1;
+  }
+  .logoImage {
+    width: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .socials {
+    margin: 5rem 0;
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .facebook {
+      width: 1.5rem;
+    }
+    .instagram {
+      width: 2.5rem;
+    }
+    .pinterest {
+      width: 3rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .footer {
+    flex-direction: column;
+    .description {
+      text-align: center;
+    }
+    .socials {
+      margin-top: 0rem;
+    }
+  }
+}

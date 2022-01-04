@@ -9,6 +9,7 @@ import ProductPage from "./Pages/ProductPage";
 import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import HomePage from "./Pages/HomePage";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Redirect to="/"></Redirect>
           </Route>
         </Switch>
+        <Footer></Footer>
       </Layout>
     </div>
   );
