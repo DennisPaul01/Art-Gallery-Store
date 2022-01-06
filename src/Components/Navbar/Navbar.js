@@ -31,7 +31,7 @@ const Navbar = () => {
           <h3>Artorian Gallery</h3>
         </div>
       </Link>
-      {(toggleMenu || screenWidth > 500) && (
+      {(toggleMenu || screenWidth > 850) && (
         <ul className={classes.list}>
           <li className={classes.items}>
             <NavLink to="/collections">Collections</NavLink>

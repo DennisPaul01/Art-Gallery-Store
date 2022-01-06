@@ -1,0 +1,50 @@
+.inputSection {
+  img {
+    width: 45rem;
+  }
+  h1 {
+    margin-bottom: -3rem;
+  }
+  p {
+    margin-top: -3rem;
+    margin-bottom: 3rem;
+  }
+
+  input {
+    width: 100%;
+    background-color: var(--cta-color);
+    font-size: 3rem;
+    border: 2px solid var(--white);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    font-family: "Lato", sans-serif;
+    font-size: 1.6rem;
+  }
+  button {
+    font-family: "Antic Didone", serif;
+    font-size: 2.4rem;
+    border: 2px solid var(--cta-color);
+    border-radius: 7px;
+    padding: 2rem 8rem;
+    transition: 0.3s;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--white);
+  }
+  button:hover {
+    background-color: var(--cta-color);
+    color: var(--inside-box-color-dark);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .inputSection {
+    img {
+      width: 20rem;
+    }
+    input {
+      max-width: 70%;
+      margin: 0 2rem;
+    }
+  }
+}

@@ -103,6 +103,39 @@
   height: auto;
 }
 
+.decorationElements {
+  position: relative;
+  .star1 {
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+  }
+  .arrow {
+    position: absolute;
+    left: 55rem;
+    top: 5rem;
+    width: 12rem;
+  }
+  .star2 {
+    position: absolute;
+    right: 20rem;
+    top: 5rem;
+    width: 10rem;
+  }
+  .star3 {
+    position: absolute;
+    right: 20rem;
+    top: -10rem;
+  }
+  .star4 {
+    position: absolute;
+    top: -10rem;
+    left: 50rem;
+    width: 9rem;
+  }
+}
+
+// MEDIA QUERIES
 @media only screen and (max-width: 1000px) {
   .intro {
     margin: auto;
@@ -114,9 +147,15 @@
       flex-basis: 100%;
       order: 2;
     }
+    p {
+      line-height: 4rem;
+      padding-bottom: 8rem;
+      width: 100%;
+    }
     margin: auto;
     img {
       order: 1;
+      max-width: 100%;
     }
   }
 
@@ -184,6 +223,46 @@
       order: 1;
       display: flex;
       align-items: center;
+      justify-content: flex-start;
+      p {
+        font-size: 5rem;
+      }
+      img {
+        max-width: 20rem;
+      }
+    }
+  }
+
+  .decorationElements {
+    position: relative;
+
+    .arrow {
+      display: none;
+    }
+    .star2 {
+      display: none;
+      position: absolute;
+      right: 20rem;
+      top: 5rem;
+      width: 10rem;
+    }
+    .star3 {
+      position: absolute;
+      right: 20rem;
+      top: -10rem;
+    }
+    .star4 {
+      position: absolute;
+      top: -5rem;
+      left: 30rem;
+      width: 9rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .soldPictures {
+    .price {
       p {
         font-size: 5rem;
         width: 100%;
@@ -191,8 +270,55 @@
       }
       img {
         flex-basis: 50%;
-        max-width: 100%;
+        width: 10rem;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .decorationElements {
+    .star2 {
+      display: none;
+      position: absolute;
+      right: 20rem;
+      top: 5rem;
+      width: 10rem;
+    }
+    .star3 {
+      position: absolute;
+      right: 20rem;
+      top: -10rem;
+    }
+    .star4 {
+      position: absolute;
+      top: -5rem;
+      left: 20rem;
+      width: 5rem;
+    }
+  }
+
+  .introText {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+    text-align: center;
+
+    .artistText {
+      display: none;
+    }
+    p {
+      height: 5rem;
+      margin-right: 2rem;
+      border-right: 0px solid var(--body-color);
+      border-left: 0px solid var(--body-color);
+      padding: 0px;
+      margin: 0px;
     }
   }
 }

@@ -82,18 +82,21 @@ nav {
   width: 5rem;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 850px) {
   .list {
+    background-color: var(--inside-box-color-dark);
     flex-direction: column;
     height: auto;
+    padding: 0rem 0rem;
   }
   .items:nth-child(1) {
     border-top: 1px solid white;
-    margin-top: 5rem;
+    margin-top: 8rem;
   }
+
   .items {
     width: 100%;
-    border-top: 1px solid black;
+    border-top: 1px solid white;
     text-align: center;
     margin-right: 0;
     padding: 2rem 0;

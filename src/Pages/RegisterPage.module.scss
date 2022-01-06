@@ -1,0 +1,36 @@
+.auth {
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10rem 0;
+  div {
+    text-align: left;
+  }
+  img {
+    max-width: 40%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .auth {
+    flex-direction: column;
+    margin: 5rem 0;
+    div {
+      text-align: center;
+      order: 2;
+      margin-top: 4rem;
+    }
+    img {
+      max-width: 50%;
+      order: 1;
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  .auth {
+    img {
+      max-width: 90%;
+      order: 1;
+    }
+  }
+}

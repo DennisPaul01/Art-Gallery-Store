@@ -9,10 +9,19 @@ import Artist from "../Assets/artist-text.png";
 import Place1 from "../Assets/place-img-1.jpg";
 import Place2 from "../Assets/place-img-2.jpg";
 import Place3 from "../Assets/place-img-3.jpg";
+import Place4 from "../Assets/place-img-4.jpg";
+import Place5 from "../Assets/place-img-5.jpg";
 import Line from "../Assets/line.png";
 import TextPrice from "../Assets/text-1-price.png";
+import TextPrice2 from "../Assets/text-2-price.png";
 import Sell1 from "../Assets/sell-1.jpg";
 import Sell2 from "../Assets/sell-2.jpg";
+import Star1 from "../Assets/star-1.svg";
+import Star2 from "../Assets/star-2.svg";
+import Star3 from "../Assets/star-3.svg";
+import Star4 from "../Assets/star-4.svg";
+
+import Arrow from "../Assets/arrow.svg";
 
 // SASS import
 import classes from "./HomePage.module.scss";
@@ -34,13 +43,13 @@ const HomePage = () => {
           </p>
           <Cta link="/collections" text="Discover"></Cta>
         </div>
-        <img
-          className={classes.imageResp}
-          src={FirstImage}
-          alt="Image-Intro"
-        ></img>
+        <img className={classes.imageResp} src={FirstImage} alt="Intro"></img>
       </section>
-
+      <section className={classes.decorationElements}>
+        <img className={classes.star1} src={Star1} alt="star-1"></img>
+        <img className={classes.arrow} src={Arrow} alt="Arrow"></img>
+        <img className={classes.star2} src={Star2} alt="star-2"></img>
+      </section>
       <section className={classes.place}>
         <div className={classes.introText}>
           <h2>The Place</h2>
@@ -48,10 +57,18 @@ const HomePage = () => {
             Visit the Artorian Gallery of Bucharest, in the heart of Bucharest,
             Romania.
           </p>
-          <img className={classes.artistText} src={Artist}></img>
+          <img
+            className={classes.artistText}
+            src={Artist}
+            alt="A few words with the artist"
+          ></img>
         </div>
         <div className={classes.placeArtists}>
-          <img className={classes.imageResp} src={Place1} alt="Place-1"></img>
+          <img
+            className={classes.imageResp}
+            src={Place1}
+            alt="Place of  the Space"
+          ></img>
 
           <ScrollContainer
             className={`${"scroll-container"} ${classes.verticalScroll}`}
@@ -59,33 +76,27 @@ const HomePage = () => {
             horizontal="true"
           >
             <div className="classes.artistCard">
-              <img src={Place2}></img>
+              <img src={Place2} alt="Artist Face"></img>
               <h3>Alexandra Nichita</h3>
             </div>
             <div className="classes.artistCard">
-              <img src={Place3}></img>
+              <img src={Place3} alt="Artist Face"></img>
               <h3>George Huszar</h3>
             </div>
             <div className="classes.artistCard">
-              <img src={Place3}></img>
-              <h3>Alexandra Nichita</h3>
+              <img src={Place4} alt="Artist Face"></img>
+              <h3>Adriana Chirita</h3>
             </div>
             <div className="classes.artistCard">
-              <img src={Place3}></img>
-              <h3>Alexandra Nichita</h3>
-            </div>
-            <div className="classes.artistCard">
-              <img src={Place3}></img>
-              <h3>Alexandra Nichita</h3>
-            </div>
-            <div className="classes.artistCard">
-              <img src={Place3}></img>
-              <h3>Alexandra Nichita</h3>
+              <img src={Place5} alt="Artist Face"></img>
+              <h3>Dorin Coltofeanu</h3>
             </div>
           </ScrollContainer>
         </div>
       </section>
-
+      <section className={classes.decorationElements}>
+        <img className={classes.star3} src={Star3} alt="star-3"></img>
+      </section>
       <section className={classes.sells}>
         <h1>Last sells</h1>
         <img className={classes.line} src={Line} alt="line"></img>
@@ -98,13 +109,13 @@ const HomePage = () => {
               tropical settings (drawn from his childhood in Havana, Cuba) are
               common subjects of late-20th-century Latin American art, Larraz's
               interpretations are characterized by a unique subtlety and
-              precise, detailed technique.{" "}
+              precise, detailed technique.
             </p>
 
             <div className={classes.price}>
               <p>SOLD:</p>
               <img
-                className={classes.imageResp}
+                className={classes.priceImage}
                 src={TextPrice}
                 alt="3000 EUR"
               ></img>
@@ -116,7 +127,9 @@ const HomePage = () => {
             alt="Abstract landscape giclee"
           ></img>
         </div>
-
+        <section className={classes.decorationElements}>
+          <img className={classes.star4} src={Star4} alt="star-4"></img>
+        </section>
         <div className={classes.soldPictures}>
           <img
             src={Sell2}
@@ -135,13 +148,16 @@ const HomePage = () => {
             <div className={classes.price}>
               <p>SOLD:</p>
               <img
-                className={classes.imageResp}
-                src={TextPrice}
+                className={classes.priceImage}
+                src={TextPrice2}
                 alt="3000 EUR"
               ></img>
             </div>
           </div>
         </div>
+      </section>
+      <section className={classes.decorationElements}>
+        <img className={classes.star3} src={Star3} alt="star-4"></img>
       </section>
     </Fragment>
   );
