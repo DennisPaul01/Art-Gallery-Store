@@ -1,7 +1,17 @@
 import React from "react";
+import LoginInput from "./../Components/Inputs/LoginInput";
+import RegisterImage from "../Assets/img-register.jpg";
+import classes from "./RegisterPage.module.scss";
 
 const LoginPage = () => {
-  return <div>Login Page</div>;
+  return (
+    <section className={classes.auth}>
+      <div>
+        <LoginInput></LoginInput>
+      </div>
+      <img src={RegisterImage} alt="Register"></img>
+    </section>
+  );
 };
 
 export default LoginPage;
