@@ -20,32 +20,32 @@ const CollectionsPage = () => {
         vertical="false"
         horizontal="true"
       >
-        <Link to="/">
+        <Link to="/product/p1">
           <div>
             <img src={ProductImage1} alt="Artist Face"></img>
             <h3>Les Coteaux de Thierceville, temps gris, 1888</h3>
             <p>Price: 3000 EUR</p>
           </div>
         </Link>
-        <Link to="/">
+        <Link to="/product/p2">
           <div>
             <img src={ProductImage2} alt="Artist Face"></img>
             <h3>Untitled, 1989</h3>
             <p>Price: 34000 EUR</p>
           </div>
         </Link>
-        <Link to="/">
+        <Link to="/product/p3">
           <div>
             <img src={ProductImage3} alt="Artist Face"></img>
             <h3>A Business Woman in her Testarrosa, 2019</h3>
             <p>Price: 155000 EUR</p>
           </div>
         </Link>
-        <Link to="/">
+        <Link to="/product/p4">
           <div>
             <img src={ProductImage4} alt="Artist Face"></img>
             <h3>A Business Woman in her Testarrosa, 2019</h3>
-            <p>Price: 155000 EUR</p>
+            <p>Price: 45000 EUR</p>
           </div>
         </Link>
       </ScrollContainer>
