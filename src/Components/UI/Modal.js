@@ -12,6 +12,14 @@ const Modal = (props) => {
   if (props.message === "EMAIL_NOT_FOUND") {
     message = "The email wasn't found. Try again!";
   }
+  if (props.message === "EMAIL_EXISTS") {
+    message = "The email already exist. Try again!";
+  }
+  if (
+    props.message === "WEAK_PASSWORD : Password should be at least 6 characters"
+  ) {
+    message = "Password should be at least 6 characters";
+  }
 
   return (
     <section className={classes.modal}>

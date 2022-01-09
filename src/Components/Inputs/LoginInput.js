@@ -1,14 +1,16 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import Line from "../../Assets/line.svg";
 import classes from "./RegisterInput.module.scss";
 import Modal from "../UI/Modal";
 import { useHistory } from "react-router-dom";
+import AuthContext from "../../store/auth-context";
 
 const LoginInput = () => {
   const [modalDisplay, setModalDisplay] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
   const [loggedAccount, setLoggedAccount] = useState(false);
   const history = useHistory();
+  const authCtx = useContext(AuthContext);
 
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
@@ -49,24 +51,31 @@ const LoginInput = () => {
           "Content-Type": "aplication/json",
         },
       }
-    ).then((res) => {
-      if (res.ok) {
-        console.log("Account Logged");
-        setLoggedAccount(true);
-        return res.json();
-      } else {
-        res.json().then((data) => {
-          console.log(data);
-          let errorMessage = "Auth Failed";
-          if (data && data.error && data.error.message) {
-            errorMessage = data.error.message;
-          }
-          console.log(errorMessage);
-          setModalMessage(errorMessage);
-          setModalDisplay(true);
-        });
-      }
-    });
+    )
+      .then((res) => {
+        if (res.ok) {
+          console.log("Account Logged");
+          setLoggedAccount(true);
+          return res.json();
+        } else {
+          res.json().then((data) => {
+            console.log(data);
+            let errorMessage = "Auth Failed";
+            if (data && data.error && data.error.message) {
+              errorMessage = data.error.message;
+            }
+            console.log(errorMessage);
+            setModalMessage(errorMessage);
+            setModalDisplay(true);
+          });
+        }
+      })
+      .then((data) => {
+        authCtx.login(data.idToken);
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
   };
   const modalHandler = () => {
     setModalDisplay(false);

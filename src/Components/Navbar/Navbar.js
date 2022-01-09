@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
 import classes from "./Navbar.module.scss";
 import logo from "../../Assets/logo.svg";
 import cart from "../../Assets/cart.svg";
+import AuthContext from "../../store/auth-context";
+import { useHistory } from "react-router-dom";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const history = useHistory();
+  const authCtx = useContext(AuthContext);
 
   const toggleNavHandler = () => {
     setToggleMenu(!toggleMenu);
@@ -23,6 +27,11 @@ const Navbar = () => {
     };
   }, []);
 
+  const logoutHandler = () => {
+    history.replace("/login");
+    return authCtx.logout();
+  };
+
   return (
     <nav>
       <Link to="/">
@@ -36,17 +45,27 @@ const Navbar = () => {
           <li className={classes.items}>
             <NavLink to="/collections">Collections</NavLink>
           </li>
-          <li className={classes.items}>
-            <NavLink to="/register">Contact</NavLink>
-          </li>
 
-          <li className={classes.items}>
-            <NavLink to="/login">Login</NavLink>
-          </li>
-
-          <li className={classes.items}>
-            <NavLink to="/register">Register</NavLink>
-          </li>
+          {!authCtx.isLoggedIn && (
+            <li className={classes.items}>
+              <NavLink to="/login">Login</NavLink>
+            </li>
+          )}
+          {!authCtx.isLoggedIn && (
+            <li className={classes.items}>
+              <NavLink to="/register">Register</NavLink>
+            </li>
+          )}
+          {authCtx.isLoggedIn && (
+            <li className={classes.items}>
+              <NavLink to="/account">Account</NavLink>
+            </li>
+          )}
+          {authCtx.isLoggedIn && (
+            <li className={classes.items}>
+              <a onClick={logoutHandler}>Logout</a>
+            </li>
+          )}
         </ul>
       )}
       <div>

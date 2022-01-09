@@ -1,5 +1,7 @@
 import "./App.scss";
 import { Route, Switch, Redirect } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "./store/auth-context";
 
 import Layout from "./Components/Layout/Layout";
 import AccountPage from "./Pages/AcountPage";
@@ -12,6 +14,8 @@ import HomePage from "./Pages/HomePage";
 import Footer from "./Components/Footer/Footer";
 
 function App() {
+  const authCtx = useContext(AuthContext);
+
   return (
     <div className="App">
       <Layout>
@@ -19,9 +23,16 @@ function App() {
           <Route path="/" exact>
             <HomePage></HomePage>
           </Route>
-          <Route path="/account">
-            <AccountPage></AccountPage>
-          </Route>
+          {authCtx.isLoggedIn && (
+            <Route path="/account">
+              <AccountPage></AccountPage>
+            </Route>
+          )}
+          {!authCtx.isLoggedIn && (
+            <Route path="/account">
+              <LoginPage></LoginPage>
+            </Route>
+          )}
           <Route path="/cart">
             <CartPage></CartPage>
           </Route>
