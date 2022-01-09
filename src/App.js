@@ -33,9 +33,15 @@ function App() {
               <LoginPage></LoginPage>
             </Route>
           )}
-          <Route path="/cart">
-            <CartPage></CartPage>
-          </Route>
+          {!authCtx.isLoggedIn ? (
+            <Route path="/cart">
+              <LoginPage></LoginPage>
+            </Route>
+          ) : (
+            <Route path="/cart">
+              <CartPage></CartPage>
+            </Route>
+          )}
           <Route path="/collections">
             <CollectionsPage></CollectionsPage>
           </Route>

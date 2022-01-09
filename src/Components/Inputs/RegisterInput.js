@@ -1,15 +1,16 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import Line from "../../Assets/line.svg";
 import Modal from "../UI/Modal";
 import classes from "./RegisterInput.module.scss";
+import AuthContext from "../../store/auth-context";
 
 const RegisterInput = () => {
   const [modalDisplay, setModalDisplay] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
   const [loggedAccount, setLoggedAccount] = useState(false);
   const history = useHistory();
-
+  const authCtx = useContext(AuthContext);
   const usernameInputRef = useRef();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
@@ -56,6 +57,7 @@ const RegisterInput = () => {
     ).then((res) => {
       if (res.ok) {
         console.log("Account Logged");
+        authCtx.setName(enteredUser);
         setLoggedAccount(true);
         return res.json();
       } else {

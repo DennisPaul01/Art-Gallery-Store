@@ -71,7 +71,8 @@ const LoginInput = () => {
         }
       })
       .then((data) => {
-        authCtx.login(data.idToken);
+        console.log(data);
+        authCtx.login(data.idToken, data.email);
       })
       .catch((err) => {
         alert(err.message);
