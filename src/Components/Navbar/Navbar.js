@@ -32,6 +32,12 @@ const Navbar = () => {
     return authCtx.logout();
   };
 
+  const storageCartHandler = () => {
+    localStorage.setItem("cartItems", JSON.stringify(authCtx.cart));
+    const vedemCeEste = JSON.parse(localStorage.getItem("cartItems"));
+    console.log(vedemCeEste);
+  };
+
   return (
     <nav>
       <Link to="/">
@@ -69,7 +75,7 @@ const Navbar = () => {
         </ul>
       )}
       <div>
-        <Link to="/cart">
+        <Link to="/cart" onClick={storageCartHandler}>
           <img className={classes.cart} src={cart} alt="cart"></img>
         </Link>
       </div>
