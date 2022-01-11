@@ -1,3 +1,9 @@
+.backgroundSpinner {
+  margin-top: 10rem;
+  height: 150rem;
+  width: 100%;
+}
+
 .ldsRing {
   display: inline-block;
   position: relative;
@@ -31,5 +37,13 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .backgroundSpinner {
+    margin-top: 10rem;
+    height: 50rem;
+    width: 100%;
   }
 }
