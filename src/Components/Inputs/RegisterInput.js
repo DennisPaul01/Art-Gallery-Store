@@ -1,16 +1,21 @@
 import React, { useRef, useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import Line from "../../Assets/line.svg";
-import Modal from "../UI/Modal";
-import classes from "./RegisterInput.module.scss";
+
 import AuthContext from "../../store/auth-context";
+
+import Modal from "../UI/Modal";
+
+import Line from "../../Assets/line.svg";
+import classes from "./RegisterInput.module.scss";
 
 const RegisterInput = () => {
   const [modalDisplay, setModalDisplay] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
   const [loggedAccount, setLoggedAccount] = useState(false);
+
   const history = useHistory();
   const authCtx = useContext(AuthContext);
+
   const usernameInputRef = useRef();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();

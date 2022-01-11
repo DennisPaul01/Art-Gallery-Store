@@ -1,20 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
-import { NavLink, Link } from "react-router-dom";
-import classes from "./Navbar.module.scss";
+import { NavLink, Link, useHistory } from "react-router-dom";
+
+import AuthContext from "../../store/auth-context";
+
 import logo from "../../Assets/logo.svg";
 import cart from "../../Assets/cart.svg";
-import AuthContext from "../../store/auth-context";
-import { useHistory } from "react-router-dom";
+
+import classes from "./Navbar.module.scss";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const history = useHistory();
   const authCtx = useContext(AuthContext);
-
-  const toggleNavHandler = () => {
-    setToggleMenu(!toggleMenu);
-  };
 
   useEffect(() => {
     const changeWidth = () => {
@@ -27,6 +25,10 @@ const Navbar = () => {
     };
   }, []);
 
+  const toggleNavHandler = () => {
+    setToggleMenu(!toggleMenu);
+  };
+
   const logoutHandler = () => {
     history.replace("/login");
     return authCtx.logout();
@@ -34,8 +36,6 @@ const Navbar = () => {
 
   const storageCartHandler = () => {
     localStorage.setItem("cartItems", JSON.stringify(authCtx.cart));
-    const vedemCeEste = JSON.parse(localStorage.getItem("cartItems"));
-    console.log(vedemCeEste);
   };
 
   return (
@@ -69,14 +69,16 @@ const Navbar = () => {
           )}
           {authCtx.isLoggedIn && (
             <li className={classes.items}>
-              <a onClick={logoutHandler}>Logout</a>
+              <Link to="/login" onClick={logoutHandler}>
+                Logout
+              </Link>
             </li>
           )}
         </ul>
       )}
-      <div>
+      <div className={classes.cart}>
         <Link to="/cart" onClick={storageCartHandler}>
-          <img className={classes.cart} src={cart} alt="cart"></img>
+          <img className={classes.icon} src={cart} alt="cart"></img>
         </Link>
       </div>
       <button onClick={toggleNavHandler} className={classes.btn}>

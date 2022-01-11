@@ -1,14 +1,19 @@
 import React, { useRef, useState, useEffect, useContext } from "react";
-import Line from "../../Assets/line.svg";
-import classes from "./RegisterInput.module.scss";
-import Modal from "../UI/Modal";
 import { useHistory } from "react-router-dom";
+
 import AuthContext from "../../store/auth-context";
+
+import Modal from "../UI/Modal";
+
+import Line from "../../Assets/line.svg";
+
+import classes from "./RegisterInput.module.scss";
 
 const LoginInput = () => {
   const [modalDisplay, setModalDisplay] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
   const [loggedAccount, setLoggedAccount] = useState(false);
+
   const history = useHistory();
   const authCtx = useContext(AuthContext);
 
@@ -54,7 +59,6 @@ const LoginInput = () => {
     )
       .then((res) => {
         if (res.ok) {
-          console.log("Account Logged");
           setLoggedAccount(true);
           return res.json();
         } else {
@@ -71,7 +75,6 @@ const LoginInput = () => {
         }
       })
       .then((data) => {
-        console.log(data);
         authCtx.login(data.idToken, data.email);
       })
       .catch((err) => {

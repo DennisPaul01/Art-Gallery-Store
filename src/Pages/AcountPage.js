@@ -1,13 +1,18 @@
 import React, { useContext, useRef, useState } from "react";
-import Line from "../Assets/line.svg";
-import classes from "./AccountPage.module.scss";
+
 import AuthContext from "../store/auth-context";
 
+import Line from "../Assets/line.svg";
+
+import classes from "./AccountPage.module.scss";
+
 const AccountPage = () => {
-  const authCtx = useContext(AuthContext);
   const [statusChangedPassword, setStatusChangedPassword] = useState(false);
+  const authCtx = useContext(AuthContext);
+
   const newPasswordRef = useRef();
 
+  // Change password handler
   const changePasswordHandler = (event) => {
     event.preventDefault();
     const enteredPassword = newPasswordRef.current.value;

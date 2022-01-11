@@ -31,6 +31,7 @@
     }
     p {
       margin-top: 2rem;
+      margin-bottom: 3rem;
     }
     button {
       font-family: "Antic Didone", serif;
@@ -112,6 +113,9 @@
         width: 100%;
         margin-bottom: 5rem;
       }
+    }
+    .modalContent {
+      width: 50%;
     }
   }
 }

@@ -1,6 +1,8 @@
 import React from "react";
+
 import RegisterInput from "../Components/Inputs/RegisterInput";
 import RegisterImage from "../Assets/img-register.jpg";
+
 import classes from "./RegisterPage.module.scss";
 
 const RegisterPage = () => {
@@ -9,7 +11,7 @@ const RegisterPage = () => {
       <div>
         <RegisterInput></RegisterInput>
       </div>
-      <img src={RegisterImage} alt="Register"></img>
+      <img src={RegisterImage} alt="Register" loading="lazy"></img>
     </section>
   );
 };

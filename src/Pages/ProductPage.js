@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
-import classes from "./ProductPage.module.scss";
 import { useParams } from "react-router-dom";
+
+import AuthContext from "../store/auth-context";
 
 import imageProduct1 from "../Assets/image-art-1.jpg";
 import imageProduct2 from "../Assets/image-art-2.jpg";
 import imageProduct3 from "../Assets/image-art-3.jpg";
 import imageProduct4 from "../Assets/image-art-4.jpg";
-import AuthContext from "../store/auth-context";
+
+import classes from "./ProductPage.module.scss";
 
 const prodcutsArt = [
   {
@@ -45,27 +47,27 @@ const prodcutsArt = [
 
 const ProductPage = () => {
   const parms = useParams();
-  const product = prodcutsArt.find((product) => product.id === parms.artId);
   const authCtx = useContext(AuthContext);
 
+  const product = prodcutsArt.find((product) => product.id === parms.artId);
+
+  // Add products to the cart in authContext
   const addCartHandler = () => {
     const price = Number(product.price.split(" ").slice(-1));
-
-    console.log(price);
     authCtx.addCartItem({
       id: product.id,
       name: product.name,
       price: price,
     });
-
-    console.log(authCtx.cart);
   };
+
   return (
     <section className={classes.product}>
       <img
         src={product.img}
         alt="Les Coteaux de Thierceville, temps gris, 1888"
         className={classes.productImage}
+        loading="lazy"
       ></img>
       <div className={classes.productDetails}>
         <h3 className={classes.name}>{product.name}</h3>

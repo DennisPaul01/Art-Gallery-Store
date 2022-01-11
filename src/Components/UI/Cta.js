@@ -1,5 +1,7 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
+
 import classes from "./Cta.module.scss";
 
 const Cta = (props) => {

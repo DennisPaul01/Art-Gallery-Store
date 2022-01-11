@@ -32,7 +32,7 @@ export const AuthContextProvider = (props) => {
   const [emailUser, setEmailUser] = useState(initialEmail);
 
   const userIsLoggedIn = !!token;
-  const carts = [];
+  let carts = [];
 
   const logoutHandler = () => {
     setToken(null);

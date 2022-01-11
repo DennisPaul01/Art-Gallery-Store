@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
+
 //Components import
 import Cta from "../Components/UI/Cta";
 
@@ -43,12 +44,32 @@ const HomePage = () => {
           </p>
           <Cta link="/collections" text="Discover"></Cta>
         </div>
-        <img className={classes.imageResp} src={FirstImage} alt="Intro"></img>
+        <img
+          className={classes.imageResp}
+          src={FirstImage}
+          alt="Intro"
+          loading="lazy"
+        ></img>
       </section>
       <section className={classes.decorationElements}>
-        <img className={classes.star1} src={Star1} alt="star-1"></img>
-        <img className={classes.arrow} src={Arrow} alt="Arrow"></img>
-        <img className={classes.star2} src={Star2} alt="star-2"></img>
+        <img
+          className={classes.star1}
+          src={Star1}
+          alt="star-1"
+          loading="lazy"
+        ></img>
+        <img
+          className={classes.arrow}
+          src={Arrow}
+          alt="Arrow"
+          loading="lazy"
+        ></img>
+        <img
+          className={classes.star2}
+          src={Star2}
+          alt="star-2"
+          loading="lazy"
+        ></img>
       </section>
       <section className={classes.place}>
         <div className={classes.introText}>
@@ -61,6 +82,7 @@ const HomePage = () => {
             className={classes.artistText}
             src={Artist}
             alt="A few words with the artist"
+            loading="lazy"
           ></img>
         </div>
         <div className={classes.placeArtists}>
@@ -68,6 +90,7 @@ const HomePage = () => {
             className={classes.imageResp}
             src={Place1}
             alt="Place of  the Space"
+            loading="lazy"
           ></img>
 
           <ScrollContainer
@@ -76,30 +99,40 @@ const HomePage = () => {
             horizontal="true"
           >
             <div className="classes.artistCard">
-              <img src={Place2} alt="Artist Face"></img>
+              <img src={Place2} alt="Artist Face" loading="lazy"></img>
               <h3>Alexandra Nichita</h3>
             </div>
             <div className="classes.artistCard">
-              <img src={Place3} alt="Artist Face"></img>
+              <img src={Place3} alt="Artist Face" loading="lazy"></img>
               <h3>George Huszar</h3>
             </div>
             <div className="classes.artistCard">
-              <img src={Place4} alt="Artist Face"></img>
+              <img src={Place4} alt="Artist Face" loading="lazy"></img>
               <h3>Adriana Chirita</h3>
             </div>
             <div className="classes.artistCard">
-              <img src={Place5} alt="Artist Face"></img>
+              <img src={Place5} alt="Artist Face" loading="lazy"></img>
               <h3>Dorin Coltofeanu</h3>
             </div>
           </ScrollContainer>
         </div>
       </section>
       <section className={classes.decorationElements}>
-        <img className={classes.star3} src={Star3} alt="star-3"></img>
+        <img
+          className={classes.star3}
+          src={Star3}
+          alt="star-3"
+          loading="lazy"
+        ></img>
       </section>
       <section className={classes.sells}>
         <h1>Last sells</h1>
-        <img className={classes.line} src={Line} alt="line"></img>
+        <img
+          className={classes.line}
+          src={Line}
+          alt="line"
+          loading="lazy"
+        ></img>
         <div className={classes.soldPictures}>
           <div>
             <h2>Abstract landscape giclee</h2>
@@ -118,6 +151,7 @@ const HomePage = () => {
                 className={classes.priceImage}
                 src={TextPrice}
                 alt="3000 EUR"
+                loading="lazy"
               ></img>
             </div>
           </div>
@@ -125,16 +159,23 @@ const HomePage = () => {
             className={classes.imageResp}
             src={Sell1}
             alt="Abstract landscape giclee"
+            loading="lazy"
           ></img>
         </div>
         <section className={classes.decorationElements}>
-          <img className={classes.star4} src={Star4} alt="star-4"></img>
+          <img
+            className={classes.star4}
+            src={Star4}
+            alt="star-4"
+            loading="lazy"
+          ></img>
         </section>
         <div className={classes.soldPictures}>
           <img
             src={Sell2}
             className={classes.imageResp}
             alt="Abstract landscape giclee"
+            loading="lazy"
           ></img>
           <div className={classes.description}>
             <h2>Untitled, 1987</h2>
@@ -151,6 +192,7 @@ const HomePage = () => {
                 className={classes.priceImage}
                 src={TextPrice2}
                 alt="3000 EUR"
+                loading="lazy"
               ></img>
             </div>
           </div>

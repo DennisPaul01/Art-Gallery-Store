@@ -1,6 +1,9 @@
 import React from "react";
+
 import LoginInput from "./../Components/Inputs/LoginInput";
+
 import RegisterImage from "../Assets/img-register.jpg";
+
 import classes from "./RegisterPage.module.scss";
 
 const LoginPage = () => {
@@ -9,7 +12,7 @@ const LoginPage = () => {
       <div>
         <LoginInput></LoginInput>
       </div>
-      <img src={RegisterImage} alt="Register"></img>
+      <img src={RegisterImage} alt="Register" loading="lazy"></img>
     </section>
   );
 };

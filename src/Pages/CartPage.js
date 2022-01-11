@@ -1,22 +1,26 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useState } from "react";
 
-import Line from "../Assets/line.svg";
-import classes from "./CartPage.module.scss";
 import AuthContext from "../store/auth-context";
 
 import CartItem from "../Components/ItemsCart/CartItem";
 
+import Line from "../Assets/line.svg";
+
+import classes from "./CartPage.module.scss";
+
 const CartPage = () => {
   const [confirmModal, setConfirmModal] = useState(false);
+  const [priceModal, setModalPrice] = useState(false);
   const authCtx = useContext(AuthContext);
+
   const itemsCart = JSON.parse(localStorage.getItem("cartItems"));
   let cartItems;
   let totalPrice = 0;
 
+  // Check if is something in the cart to show in the page
   if (itemsCart === null || itemsCart.length < 1) {
     cartItems = <p>Nothing in the cart</p>;
   } else {
-    console.log(authCtx.cart);
     cartItems = itemsCart.map((item) => {
       totalPrice += item.price;
       return (
@@ -30,6 +34,9 @@ const CartPage = () => {
   }
 
   const confirmHandler = () => {
+    if (totalPrice > 0) {
+      setModalPrice(true);
+    }
     setConfirmModal(true);
     localStorage.removeItem("cartItems");
   };
@@ -54,7 +61,11 @@ const CartPage = () => {
       {confirmModal && (
         <div className={classes.modal}>
           <div className={classes.modalContent}>
-            <h3>Your order has been procesed!</h3>
+            <h3>
+              {!priceModal
+                ? "You have to buy something"
+                : "Your order has been procesed!"}
+            </h3>
             <br></br>
             <button
               onClick={() => {
