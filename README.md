@@ -1,5 +1,4 @@
-https://art-store-with-react.netlify.app/
-
+https://artorian-gallery-store.netlify.app/
 
 Artorian Gallery is a personal project where I built a store for art. 
 ------------------------------------------------------------------------------------------------------
