@@ -1,7 +1,5 @@
-import React, { useRef, useState, useEffect, useContext } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-
-import AuthContext from "../../store/auth-context";
 
 import Modal from "../UI/Modal";
 
@@ -14,7 +12,6 @@ const RegisterInput = () => {
   const [loggedAccount, setLoggedAccount] = useState(false);
 
   const history = useHistory();
-  const authCtx = useContext(AuthContext);
 
   const usernameInputRef = useRef();
   const emailInputRef = useRef();
@@ -26,7 +23,7 @@ const RegisterInput = () => {
       if (loggedAccount) {
         history.push("/login");
       }
-    }, [5000]);
+    }, [1000]);
   }, [loggedAccount, history]);
 
   const submitHandler = (event) => {
@@ -34,7 +31,6 @@ const RegisterInput = () => {
 
     let errorMessage;
 
-    const enteredUser = usernameInputRef.current.value;
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
     const enteredPasswordConf = passwordConfInputRef.current.value;
@@ -62,7 +58,7 @@ const RegisterInput = () => {
     ).then((res) => {
       if (res.ok) {
         console.log("Account Logged");
-        authCtx.setName(enteredUser);
+
         setLoggedAccount(true);
         return res.json();
       } else {
