@@ -42,7 +42,13 @@ const Navbar = () => {
     <nav>
       <Link to="/">
         <div className={classes.logo}>
-          <img className={classes.logoImage} src={logo} alt="Logo"></img>
+          <img
+            className={classes.logoImage}
+            src={logo}
+            width="50"
+            height="38"
+            alt="Logo"
+          ></img>
           <h3>Artorian Gallery</h3>
         </div>
       </Link>

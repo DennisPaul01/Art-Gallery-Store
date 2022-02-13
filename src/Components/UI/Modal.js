@@ -19,7 +19,16 @@ const Modal = (props) => {
   if (
     props.message === "WEAK_PASSWORD : Password should be at least 6 characters"
   ) {
-    message = "Password should be at least 6 characters";
+    message = "Password must have at least 6 characters";
+  }
+  if (props.message === "INVALID_EMAIL") {
+    message = "The email already exist";
+  }
+  if (props.message === "EMAIL_SMALL_6") {
+    message = "The email should be at least 6 characters";
+  }
+  if (props.message === "PASSWORD_SMALL_6") {
+    message = "The password must have least 6 characters";
   }
 
   return (

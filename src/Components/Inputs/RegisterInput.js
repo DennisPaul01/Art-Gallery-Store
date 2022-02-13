@@ -57,18 +57,15 @@ const RegisterInput = () => {
       }
     ).then((res) => {
       if (res.ok) {
-        console.log("Account Logged");
-
         setLoggedAccount(true);
         return res.json();
       } else {
         res.json().then((data) => {
-          console.log(data);
           let errorMessage = "Auth Failed";
           if (data && data.error && data.error.message) {
             errorMessage = data.error.message;
           }
-          console.log(errorMessage);
+
           setModalMessage(errorMessage);
           setModalDisplay(true);
         });

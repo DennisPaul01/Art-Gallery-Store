@@ -98,6 +98,10 @@
   }
 }
 
+.imageResp2 {
+  width: 70rem;
+  height: auto;
+}
 .imageResp {
   max-width: 100%;
   height: auto;
@@ -137,6 +141,11 @@
 
 // MEDIA QUERIES
 @media only screen and (max-width: 1000px) {
+  .imageResp2 {
+    width: 70rem;
+    height: auto;
+  }
+
   .intro {
     margin: auto;
     text-align: center;
@@ -261,6 +270,10 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .imageResp2 {
+    width: 100%;
+    height: auto;
+  }
   .soldPictures {
     .price {
       p {

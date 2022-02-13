@@ -37,12 +37,27 @@ const LoginInput = () => {
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
     const enteredPasswordConf = passwordConfInputRef.current.value;
+
+    if (enteredPassword.length < 6) {
+      errorMessage = "PASSWORD_SMALL_6";
+      setModalMessage(errorMessage);
+      setModalDisplay(true);
+      return;
+    }
+
     if (enteredPassword !== enteredPasswordConf) {
       errorMessage = "PASSWORD_NO_THE_SAME";
       setModalMessage(errorMessage);
       setModalDisplay(true);
       return;
     }
+    if (enteredEmail.length < 6) {
+      errorMessage = "EMAIL_SMALL_6";
+      setModalMessage(errorMessage);
+      setModalDisplay(true);
+      return;
+    }
+
     fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAKmRR40Z8Lddf3_umQ19JqvlPODWwn1E4",
       {
@@ -63,12 +78,11 @@ const LoginInput = () => {
           return res.json();
         } else {
           res.json().then((data) => {
-            console.log(data);
             let errorMessage = "Auth Failed";
             if (data && data.error && data.error.message) {
               errorMessage = data.error.message;
             }
-            console.log(errorMessage);
+
             setModalMessage(errorMessage);
             setModalDisplay(true);
           });

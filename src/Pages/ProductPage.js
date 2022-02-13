@@ -7,12 +7,17 @@ import imageProduct1 from "../Assets/image-art-1.jpg";
 import imageProduct2 from "../Assets/image-art-2.jpg";
 import imageProduct3 from "../Assets/image-art-3.jpg";
 import imageProduct4 from "../Assets/image-art-4.jpg";
+import imageProduct1Webp from "../Assets/image-art-1.webp";
+import imageProduct2Webp from "../Assets/image-art-2.webp";
+import imageProduct3Webp from "../Assets/image-art-3.webp";
+import imageProduct4Webp from "../Assets/image-art-4.webp";
 
 import classes from "./ProductPage.module.scss";
 
 const prodcutsArt = [
   {
     id: "p1",
+    imgwebp: imageProduct1Webp,
     img: imageProduct1,
     name: "Les Coteaux de Thierceville, temps gris, 1888",
     price: "EUR 3000",
@@ -21,6 +26,7 @@ const prodcutsArt = [
   },
   {
     id: "p2",
+    imgwebp: imageProduct2Webp,
     img: imageProduct2,
     name: "Untitled, 1989",
     price: "EUR 34000",
@@ -29,6 +35,7 @@ const prodcutsArt = [
   },
   {
     id: "p3",
+    imgwebp: imageProduct3Webp,
     img: imageProduct3,
     name: "A Business Woman in her Testarrosa, 2019",
     price: "EUR 155000",
@@ -37,6 +44,7 @@ const prodcutsArt = [
   },
   {
     id: "p4",
+    imgwebp: imageProduct4Webp,
     img: imageProduct4,
     name: "Juegos de Amor III, 2003",
     price: "EUR 45000",
@@ -63,12 +71,16 @@ const ProductPage = () => {
 
   return (
     <section className={classes.product}>
-      <img
-        src={product.img}
-        alt="Les Coteaux de Thierceville, temps gris, 1888"
-        className={classes.productImage}
-        loading="lazy"
-      ></img>
+      <picture>
+        <source srcSet={product.imgwebp} type="image/webp" />
+        <source srcSet={product.img} type="image/jpeg" />
+        <img
+          src={product.img}
+          alt="Les Coteaux de Thierceville, temps gris, 1888"
+          className={classes.productImage}
+          loading="lazy"
+        ></img>
+      </picture>
       <div className={classes.productDetails}>
         <h3 className={classes.name}>{product.name}</h3>
         <h3 className={classes.type}>Oil on canvas</h3>

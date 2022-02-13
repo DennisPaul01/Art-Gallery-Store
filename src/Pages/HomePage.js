@@ -17,6 +17,15 @@ import TextPrice from "../Assets/text-1-price.png";
 import TextPrice2 from "../Assets/text-2-price.png";
 import Sell1 from "../Assets/sell-1.jpg";
 import Sell2 from "../Assets/sell-2.jpg";
+
+import Place1webp from "../Assets/place-img-1.webp";
+import Place2webp from "../Assets/place-img-2.webp";
+import Place3webp from "../Assets/place-img-3.webp";
+import Place4webp from "../Assets/place-img-4.webp";
+import Place5webp from "../Assets/place-img-5.webp";
+import Sell1webp from "../Assets/sell-1.webp";
+import Sell2webp from "../Assets/sell-2.webp";
+
 import Star1 from "../Assets/star-1.svg";
 import Star2 from "../Assets/star-2.svg";
 import Star3 from "../Assets/star-3.svg";
@@ -44,12 +53,13 @@ const HomePage = () => {
           </p>
           <Cta link="/collections" text="Discover"></Cta>
         </div>
+
         <img
           className={classes.imageResp}
           src={FirstImage}
           alt="Intro"
           loading="lazy"
-        ></img>
+        />
       </section>
       <section className={classes.decorationElements}>
         <img
@@ -86,12 +96,18 @@ const HomePage = () => {
           ></img>
         </div>
         <div className={classes.placeArtists}>
-          <img
-            className={classes.imageResp}
-            src={Place1}
-            alt="Place of  the Space"
-            loading="lazy"
-          ></img>
+          <picture>
+            <source srcSet={Place1webp} type="image/webp" />
+            <source srcSet={Place1} type="image/jpeg" />
+            <img
+              className={classes.imageResp2}
+              src={Place1}
+              alt="Place of  the Space"
+              width="819"
+              height="438"
+              loading="lazy"
+            />
+          </picture>
 
           <ScrollContainer
             className={`${"scroll-container"} ${classes.verticalScroll}`}
@@ -99,19 +115,59 @@ const HomePage = () => {
             horizontal="true"
           >
             <div className="classes.artistCard">
-              <img src={Place2} alt="Artist Face" loading="lazy"></img>
+              <picture>
+                <source srcSet={Place2webp} type="image/webp" />
+                <source srcSet={Place2} type="image/jpeg" />
+                <img
+                  src={Place2}
+                  alt="Artist Face"
+                  width="313"
+                  height="338"
+                  loading="lazy"
+                />
+              </picture>
               <h3>Alexandra Nichita</h3>
             </div>
             <div className="classes.artistCard">
-              <img src={Place3} alt="Artist Face" loading="lazy"></img>
+              <picture>
+                <source srcSet={Place3webp} type="image/webp" />
+                <source srcSet={Place3} type="image/jpeg" />
+                <img
+                  src={Place3}
+                  alt="Artist Face"
+                  width="313"
+                  height="338"
+                  loading="lazy"
+                />
+              </picture>
               <h3>George Huszar</h3>
             </div>
             <div className="classes.artistCard">
-              <img src={Place4} alt="Artist Face" loading="lazy"></img>
+              <picture>
+                <source srcSet={Place4webp} type="image/webp" />
+                <source srcSet={Place4} type="image/jpeg" />
+                <img
+                  src={Place4}
+                  alt="Artist Face"
+                  width="313"
+                  height="338"
+                  loading="lazy"
+                />
+              </picture>
               <h3>Adriana Chirita</h3>
             </div>
             <div className="classes.artistCard">
-              <img src={Place5} alt="Artist Face" loading="lazy"></img>
+              <picture>
+                <source srcSet={Place5webp} type="image/webp" />
+                <source srcSet={Place5} type="image/jpeg" />
+                <img
+                  src={Place5}
+                  alt="Artist Face"
+                  width="313"
+                  height="338"
+                  loading="lazy"
+                />
+              </picture>
               <h3>Dorin Coltofeanu</h3>
             </div>
           </ScrollContainer>
@@ -131,6 +187,8 @@ const HomePage = () => {
           className={classes.line}
           src={Line}
           alt="line"
+          width="189"
+          height="auto"
           loading="lazy"
         ></img>
         <div className={classes.soldPictures}>
@@ -150,17 +208,25 @@ const HomePage = () => {
               <img
                 className={classes.priceImage}
                 src={TextPrice}
+                width="289"
+                height="180"
                 alt="3000 EUR"
                 loading="lazy"
               ></img>
             </div>
           </div>
-          <img
-            className={classes.imageResp}
-            src={Sell1}
-            alt="Abstract landscape giclee"
-            loading="lazy"
-          ></img>
+          <picture>
+            <source srcSet={Sell1webp} type="image/webp" />
+            <source srcSet={Sell1} type="image/jpeg" />
+            <img
+              className={classes.imageResp}
+              src={Sell1}
+              alt="Abstract landscape giclee"
+              width="567"
+              height="526"
+              loading="lazy"
+            />
+          </picture>
         </div>
         <section className={classes.decorationElements}>
           <img
@@ -171,12 +237,18 @@ const HomePage = () => {
           ></img>
         </section>
         <div className={classes.soldPictures}>
-          <img
-            src={Sell2}
-            className={classes.imageResp}
-            alt="Abstract landscape giclee"
-            loading="lazy"
-          ></img>
+          <picture>
+            <source srcSet={Sell2webp} type="image/webp" />
+            <source srcSet={Sell2} type="image/jpeg" />
+            <img
+              className={classes.imageResp}
+              src={Sell2}
+              alt="Abstract landscape giclee"
+              width="567"
+              height="526"
+              loading="lazy"
+            />
+          </picture>
           <div className={classes.description}>
             <h2>Untitled, 1987</h2>
             <p className={classes.paragraph}>
@@ -191,7 +263,9 @@ const HomePage = () => {
               <img
                 className={classes.priceImage}
                 src={TextPrice2}
-                alt="3000 EUR"
+                width="289"
+                height="180"
+                alt="45000 EUR"
                 loading="lazy"
               ></img>
             </div>

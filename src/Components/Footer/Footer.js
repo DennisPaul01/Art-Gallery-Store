@@ -13,7 +13,13 @@ const Footer = () => {
   return (
     <div className={classes.footer}>
       <div className={classes.description}>
-        <img className={classes.logoImage} src={logo} alt="Logo"></img>
+        <img
+          className={classes.logoImage}
+          src={logo}
+          alt="Logo"
+          width="40"
+          height="31"
+        ></img>
         <p>
           Our website, Artorian Gallery, offers constant original coverage of
           the interior design and architecture worlds, new shops and products,
@@ -24,13 +30,21 @@ const Footer = () => {
       </div>
       <div className={classes.socials}>
         <a href="/facebook">
-          <img className={classes.facebook} src={Facebook} alt="Facebook"></img>
+          <img
+            className={classes.facebook}
+            src={Facebook}
+            alt="Facebook"
+            width="15"
+            height="29"
+          ></img>
         </a>
         <a href="/instagram">
           <img
             className={classes.instagram}
             src={Instagram}
             alt="Instagram"
+            width="25"
+            height="32"
           ></img>
         </a>
         <a href="/pinterest">
@@ -38,6 +52,8 @@ const Footer = () => {
             className={classes.pinterest}
             src={Pinterest}
             alt="Pinterest"
+            width="30"
+            height="30"
           ></img>
         </a>
       </div>
